@@ -1,0 +1,15 @@
+Open your terminal and navigate to the directory where you want to create your project.
+Run the following command to create a new Django project: django-admin startproject myproject.
+Navigate to the newly created project directory: cd myproject.
+Create a new Django app: python manage.py startapp myapp.
+In your app’s views.py file, add the code
+
+then 
+
+
+Run the development server: python manage.py runserver.
+Open your web browser and navigate to http://localhost:8000/. You should see the form page.
+Fill out the form and submit it. You should see a success message.
+Click on the “List” link to view the list page. You should see the username you just submitted.
+Click on the “Form” link to go back to the form page.
+

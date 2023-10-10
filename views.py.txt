@@ -1,0 +1,23 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+class Person:
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+people = []
+
+def form_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        person = Person(username, password)
+        people.append(person)
+        return HttpResponse('Person added successfully!')
+    else:
+        return render(request, 'form.html')
+
+def list_view(request):
+    context = {'people': people}
+    return render(request, 'list.html', context)

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>List</h1>
+    {% if people %}
+        <ul>
+            {% for person in people %}
+                <li>{{ person.username }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No people yet.</p>
+    {% endif %}
+    <a href="{% url 'form' %}">Form</a>
+</body>
+</html>
